@@ -7,7 +7,8 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return None
+    remainder = a_number % 2
+    return remainder == 1
 
 
 def fix_it(moves=True, should_move=True):
@@ -22,20 +23,35 @@ def fix_it(moves=True, should_move=True):
     "Duct Tape"
     "No Problem"
 
-    Most people write this function with 4 return statements. 
+    Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+
+    if moves == True:
+        if should_move == True:
+            return "No Problem"
+        else:
+            return "Duct Tape"
+
+    if moves == False:
+        if should_move == False:
+            return "No Problem"
+        else:
+            return "WD-40"
 
 
-def loops_1a():
+def loops_1a(number_of_items=10, symbol="*"):
     """Make 10 stars.
 
     Using a for loop
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+
+    row = []
+    for I in range(10):
+        row.append("*")
+    return row
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -45,7 +61,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    row = []
+    for I in range(number_of_items):
+        row.append(symbol)
+    return row
 
 
 def loops_2():
@@ -66,7 +85,14 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    star_square = []
+    for Y in range(10):
+        row = []
+        for X in range(10):
+            row.append("*")
+        star_square.append(row)
+
+    return star_square
 
 
 def loops_3():
@@ -90,7 +116,14 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    number_square = []
+    for Y in range(10):
+        row = []
+        for X in range(10):
+            row.append(str(Y))
+        number_square.append(row)
+
+    return number_square
 
 
 def loops_4():
@@ -110,7 +143,15 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+
+    number_square = []
+    for Y in range(10):
+        row = []
+        for X in range(10):
+            row.append(str(X))
+        number_square.append(row)
+
+    return number_square
 
 
 def loops_5():
@@ -137,7 +178,15 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+
+    coordinate_square = []
+    for i in range(10):
+        row = []
+        for j in range(5):
+            row.append("(i" + str(i) + ", j" + str(j) + ")")
+        coordinate_square.append(row)
+
+    return coordinate_square
 
 
 def loops_6():
@@ -160,7 +209,16 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+
+    wedge = []
+
+    for Y in range(10):
+        row = []
+        for X in range(Y + 1):
+            row.append(str(X))
+        wedge.append(row)
+
+    return wedge
 
 
 def loops_7():
@@ -184,7 +242,19 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+
+    pyramid = []
+
+    for Y in range(5):
+        row = []
+        for X in range(9):
+            if abs(X - 4) <= Y:
+                row.append("*")
+            else:
+                row.append(" ")
+        pyramid.append(row)
+
+    return pyramid
 
 
 def little_printer(some_kind_of_list, exercise_name):
