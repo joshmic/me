@@ -90,15 +90,13 @@ def super_asker(low, high):
     """
 
     while True:
-        user_input = input(f"give me a number between {low} and {high}: ")
-        if user_input:
-            try:
-                if low <= int(user_input) <= high:
-                    return user_input
-            except TypeError as my_error:
-                print("Give me an actual number {my_error}:")
-            except ValueError as my_error:
-                print("Give me an actual number {my_error}:")
+        try:
+            ask_for_number = int(input(message))
+            print(f"{ask_for_number} is a number")
+            if low < ask_for_number < high:
+                return ask_for_number
+        except Exception as e:
+            print(f"{e} is not a number")
 
 
 if __name__ == "__main__":
