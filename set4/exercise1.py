@@ -129,7 +129,7 @@ def pokedex(low=1, high=5):
             some_pokemon.append(the_json)
 
     height_of_tallest_pokemon = 0
-    tallest_pokemon = "🐉"
+    tallest_pokemon = "🐲🐙"
     for p in some_pokemon:
         height = p["height"]
         if height > height_of_tallest_pokemon:
@@ -141,8 +141,6 @@ def pokedex(low=1, high=5):
         "weight": tallest_pokemon["weight"],
         "height": tallest_pokemon["height"],
     }
-
-    return {"name": None, "weight": None, "height": None}
 
 
 def diarist():
